@@ -31,7 +31,6 @@ describe "edit product process" do
   it "delete a product" do
     product = Product.create(:name => 'Mars', :cost => '1.50', :origin => 'United States of America')
     visit product_path(product)
-    # save_and_open_page
     click_on 'Delete'
     expect(page).not_to have_content 'Planets'
   end
