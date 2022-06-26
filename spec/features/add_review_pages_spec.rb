@@ -3,6 +3,11 @@ require 'rails_helper'
 describe "add a review" do
   before:each do
     visit new_product_path
+    click_link'Sign up'
+    fill_in'Email', with: 'userexample@gmail.com'
+    fill_in'Password', with: 'userpassword'
+    fill_in'Password confirmation', with: 'userpassword'
+    click_button'Sign up'
   end
   
   it "adds a review" do

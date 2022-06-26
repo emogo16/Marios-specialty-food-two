@@ -3,11 +3,20 @@ require 'rails_helper'
 describe "add a product" do
   before:each do
     visit new_product_path
+    click_link'Sign up'
+    fill_in'Email', with: 'userexample@gmail.com'
+    fill_in'Password', with: 'userpassword'
+    fill_in'Password confirmation', with: 'userpassword'
+    click_button'Sign up'
+    @user = User.last
+    @user.update(admin: true)
+    visit new_product_path
   end
   
   it "adds a new product" do
     visit products_path
     click_link 'Create new product'
+    save_and_open_page
     fill_in 'Name', :with => 'Mars'
     fill_in 'Cost', :with => '2'
     fill_in 'Origin', :with => 'United States of America'
