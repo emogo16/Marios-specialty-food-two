@@ -12,9 +12,7 @@ describe "add a review" do
   
   it "adds a review" do
     product = Product.create(:name => 'Snickers', :cost => '1.50', :origin => 'United States of America')
-    # visit new_product_path
     visit product_path(product)
-    # click_link 'Snickers'
     click_link 'Add a review for this product'
     fill_in 'Author', :with => "Bob"
     fill_in 'review_content_body', :with => "Blah Blah Blah lalallalalalalalalalalalallalalallalalalalalalalalalalla."
