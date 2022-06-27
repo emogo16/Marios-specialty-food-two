@@ -41,9 +41,22 @@ Then run 'rake db:migrate'
 
 Then run 'rake db:seed'
 
-Then run 'pg_ctl start' to start up a psql server
+Then run 'pg_ctl start' to start up a psql server or 'rails s'
 
-To start up a rails server run 'rails s', then navigate to localhost:5432 in your browser.
+To start up a rails server run 'rails s', then navigate to localhost:3000 in your browser.
+
+You can create an account to be a user
+
+To become an admin, open the rails console by running 'rails c' in your terminal
+
+Locate your account by entering 'User.where' Here you will see your account
+
+Once you locate your account, you will need to set your admin privileges to true
+
+In the terminal run the command 'User.where(email: "YOUR EMAIL HERE").update(admin: true)'
+
+Go back in your web browser, to see all the admin privileges
+
 ## Known Bugs
 
 There is no known bugs at the moment
