@@ -16,7 +16,6 @@ describe "add a product" do
   it "adds a new product" do
     visit products_path
     click_link 'Create new product'
-    save_and_open_page
     fill_in 'Name', :with => 'Mars'
     fill_in 'Cost', :with => '2'
     fill_in 'Origin', :with => 'United States of America'
